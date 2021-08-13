@@ -20,12 +20,6 @@ public class Consumer {
 
     @KafkaListener(topics = "create-user", groupId = "demo-group-id")
     public void consume(User user) throws IOException {
-        logger.info(String.format("#### ->topics: create-user Consumed message -> %s", user));
+        logger.info(String.format("#### ->topics: create-user Consumed message -> %s", user.toString()));
     }
-
-//     @KafkaListener(topics = "topic", groupId = "myGroupId", properties = {"spring.json.value.default.type=com.something.model.TransactionEventPayload"})
-//  public void consumeTransactionEvent(@Payload TransactionEventPayload payload,
-//                        @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) Integer key,
-//                        @Header(KafkaHeaders.RECEIVED_PARTITION_ID) int partition,
-//                        @Header(KafkaHeaders.RECEIVED_TIMESTAMP) long timestamp) {
 }
